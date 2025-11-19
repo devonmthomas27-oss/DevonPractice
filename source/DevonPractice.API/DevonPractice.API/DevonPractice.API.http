@@ -1,0 +1,6 @@
+@DevonPractice.API_HostAddress = http://localhost:5237
+
+GET {{DevonPractice.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
