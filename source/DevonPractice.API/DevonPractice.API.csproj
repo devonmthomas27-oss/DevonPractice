@@ -3,6 +3,7 @@
 
 
   <ItemGroup>
+    <PackageReference Include="AspNetCoreAnalyzers" Version="0.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="10.0.1" />
   </ItemGroup>

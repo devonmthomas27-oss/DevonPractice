@@ -1,5 +1,6 @@
 
 using Microsoft.OpenApi;
+using System.Reflection;
 
 namespace DevonPractice.API
 {
@@ -15,9 +16,17 @@ namespace DevonPractice.API
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
             builder.Services.AddSwaggerGen(options =>
+
             {
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+
+                string xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+
+                string xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+
+                options.IncludeXmlComments(xmlPath);
+
             });
+
 
             var app = builder.Build();
 
@@ -25,10 +34,8 @@ namespace DevonPractice.API
           
                 app.MapOpenApi();
             app.UseSwagger();
-            app.UseSwaggerUI(options =>
-            {
-                options.SwaggerEndpoint("v1/swagger.json", "My API V1");
-            });
+            app.UseSwaggerUI
+            ();
 
 
             app.UseHttpsRedirection();

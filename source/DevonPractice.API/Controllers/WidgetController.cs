@@ -3,16 +3,19 @@ using Microsoft.AspNetCore.Mvc;
 namespace DevonPractice.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    [Route("widget")]
+    public class WidgetController : ControllerBase
     {
-   
+   /// <summary>
+   /// Gets my widget
+   /// </summary>
+   /// <returns><see cref="IActionResult"/>.</returns>
 
         [HttpGet]
         [ProducesResponseType<string>(StatusCodes.Status200OK)]
         public IActionResult Get()
         {
-        return Ok();
+        return Ok("hello!");
         }
     }
 }
