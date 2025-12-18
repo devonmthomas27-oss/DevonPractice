@@ -1,6 +1,8 @@
 
+using DevonPracticeInfrastructure.Dependencies;
 using Microsoft.OpenApi;
 using System.Reflection;
+using DevonPracticeInfrastructure;
 
 namespace DevonPractice.API
 {
@@ -15,6 +17,7 @@ namespace DevonPractice.API
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
+            builder.Services.RegisterApplication(builder.Configuration);
             builder.Services.AddSwaggerGen(options =>
 
             {
