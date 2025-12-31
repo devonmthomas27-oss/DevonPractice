@@ -1,1 +1,4 @@
-<Solution />
+<Solution>
+  <Project Path="source/DevonPractice.API/DevonPractice.API.csproj" />
+  <Project Path="source/DevonPracticeInfrastructure/DevonPracticeInfrastructure.csproj" />
+</Solution>
